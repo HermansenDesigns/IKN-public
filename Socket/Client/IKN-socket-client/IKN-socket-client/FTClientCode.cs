@@ -41,17 +41,6 @@ namespace IKN_socket_client
 
                 Console.WriteLine("Connection to server ...");
                 clientSock.Connect(ipEnd);
-
-                //for (int j = 0; j < fileData.Length / 1000; j *= 1000)
-                //{
-                //    for (int i = 0; i < 1000; i++)
-                //    {
-                //        clientData[i + 4 + fileNameByte.Length] = fileData[i + j];
-                //        Console.WriteLine("File sending...");
-                //        Console.WriteLine();
-                //        clientSock.Send(clientData);
-                //    }
-                //}
                 fileData.CopyTo(clientData, 4 + fileNameByte.Length);
 
 
@@ -59,14 +48,6 @@ namespace IKN_socket_client
 
                 Console.WriteLine("Disconnecting...");
                 clientSock.Close();
-
-                /* copy these bytes to a variable with format line [file name length] [file name] [ file content] */
-
-                /* Trying to connection with server. */
-                
-                /* Now connection established, send client data to server. */
-                
-                /* Data send complete now close socket. */
                 Console.WriteLine("File transferred.");
             }
             catch (Exception ex)
