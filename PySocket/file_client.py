@@ -11,12 +11,12 @@ sData = "Temp"
  
 while True:
     skClient.send(sFileName.encode())
-    sData = skClient.recv(1024)
+    sData = skClient.recv(1000)
     fDownloadFile = open(sFileName,"wb")
     while sData:
-        print("Chunk 1k")
+        print(len(sData))
         fDownloadFile.write(sData)
-        sData = skClient.recv(1024)
+        sData = skClient.recv(1000)
     print ("Download Completed")
     break
  

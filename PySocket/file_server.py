@@ -14,8 +14,8 @@ bFileFound = 0
 while True:
     Content,Address = skServer.accept()
     print (Address)
-    sFileName = Content.recv(1024).decode()
-    for file in os.listdir("C:/Users/KaspersLaptop/Desktop/receive/"):
+    sFileName = Content.recv(1000).decode()
+    for file in os.listdir("C:/Users/KaspersLaptop/Documents/GitHub/IKN-public/PySocket/send/"):
         if file == sFileName:
             bFileFound = 1
             break
@@ -25,12 +25,12 @@ while True:
  
     else:
         print (sFileName + " File Found")
-        fUploadFile = open("C:/Users/KaspersLaptop/Desktop/receive/" + sFileName,"rb+")
-        sRead = fUploadFile.read(1024)
+        fUploadFile = open("C:/Users/KaspersLaptop/Documents/GitHub/IKN-public/PySocket/send/" + sFileName,"rb+")
+        sRead = fUploadFile.read(1000)
 
         while sRead:
             Content.send(sRead)
-            sRead = fUploadFile.read(1024)
+            sRead = fUploadFile.read(1000)
         print ("Sending Completed")
     break
  
