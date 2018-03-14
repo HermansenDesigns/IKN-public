@@ -21,4 +21,3 @@ while True:
         sData = skClient.recv(1000)
     print ("Download Completed")
     break
- 
